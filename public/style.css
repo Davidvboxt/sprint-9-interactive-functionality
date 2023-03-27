@@ -1,0 +1,461 @@
+:root {
+    --red: rgb(255, 0, 0);
+    --dark-red: #e30b0b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Regular;
+    color: #000000;
+}
+
+body{
+  min-height: 1000px;
+}
+
+/* GENERAL */
+span{
+  color: var(--red);
+}
+
+p{
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+.boek-schrijvers{
+  color: #454545;
+  font-size: .9231rem;
+  font-style: italic;
+  margin-bottom: 20px;
+  margin-top: 3px;
+}
+
+.btn{
+    margin-top: 25px;
+    width: 69%;
+    background-color: var(--red);
+    color: white;
+    padding: 7px;
+    border: 1px;
+    /* position: absolute;
+    bottom: 14px; */
+}
+
+section{
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+h1{
+
+}
+
+h4{
+  font-weight: 600;
+}
+
+/* SEARCHBAR */
+.search{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.search-input{
+  padding: 10px;
+  width: 300px;
+}
+
+.search-btn{
+  padding: 10px;
+  margin-left: 8px;
+}
+
+/* HEADER */
+.header-section{
+    position: relative;
+    width: 100%;
+    min-height: 55vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo{
+    position: relative;
+    max-width: 80px;
+}
+
+@media (min-width: 820px) {
+    header .logo{
+      max-width: 150px;
+  }
+}
+
+header ul{
+    position: relative;
+    display: flex;
+}
+
+@media (max-width: 820px) {
+    header ul{
+      display: none;
+  }
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li .active{
+    background-color: var(--red);
+    border-radius: 50px;
+    color: white;
+}
+
+header ul li a{
+    display: inline-block;
+    padding: 15px;
+    color: #333;
+    font-weight: 700;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+/* SUB-HEADER */
+@media (min-width: 820px) {
+  .sub-header {
+    display: contents;
+  }
+  .sub-header-foto {
+    margin-top: 0;
+  }
+}
+
+.sub-header-foto {
+  margin-top: 30px;
+  height: 200px;
+  width: 200px;
+  align-items: center;
+}
+
+/* BOEKEN OVERZICHTS */
+article{
+  width: 16em;
+  min-height: 20em;
+  position: relative;
+  padding: 25px 60px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  min-height: 23em;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.boeken-foto{
+  height: 150px;
+  width: 115px;
+  margin-bottom: 15px;
+}
+
+.read-more-container{
+  display: flex;
+  /* flex-flow: row wrap;
+  gap: 2rem;
+  justify-content: center; */
+}
+
+.container{
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 2px;
+  line-height: 1.4rem;
+  box-shadow: 0 0 1rem rgba(0,0,0,.1);
+}
+
+.more-details{
+  color: #0984e3;
+  color: #32557f;
+  text-decoration: none;
+  border-bottom: 2px dashed #32557f;
+  padding-bottom: 3px;
+}
+
+.read-more-text{
+  display: none;
+}
+
+.read-more-text--show{
+  display: inline;
+}
+
+/* SLIDER */
+/* HEADER */
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Mulish", sans-serif;
+}
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url(./images/banner.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.navbar {
+  width: 85%;
+  margin: auto;
+  padding: 35px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 500px;
+  cursor: pointer;
+}
+
+.navbar ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 20px;
+  position: relative;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.navbar ul li::after {
+  content: "";
+  height: 3px;
+  width: 0;
+  background: #009688;
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+  width: 100%;
+}
+
+.content {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #fff;
+}
+
+.content h1 {
+  font-size: 70px;
+  margin-top: 80px;
+}
+
+.content p {
+  margin: 20px auto;
+  font-weight: 100;
+  line-height: 25px;
+}
+
+.login-btn {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.signup-btn {
+  width: 200px;
+  padding: 15px 0;
+  text-align: center;
+  margin: 20px 10px;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid #009688;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover {
+  background: #009688;
+  height: 100%;
+  width: 0%;
+  border-radius: 25px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+  transition: 0.5s;
+}
+
+button:hover span {
+  width: 100%;
+}
+
+button:hover {
+  border: none;
+}
+
+/* PRODUCTS */
+.product {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-container {
+  padding: 1vw 10vw;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 0.8rem;
+}
+
+.product-container::-webkit-scrollbar {
+  display: none;
+}
+
+.pre-btn,
+.nxt-btn {
+  border: none;
+  width: 6vw;
+  height: 223%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+  cursor: pointer;
+  z-index: 8;
+}
+
+.pre-btn {
+  left: 0;
+  transform: rotate(180deg);
+}
+
+.nxt-btn {
+  right: 0;
+}
+
+.pre-btn img,
+.nxt-btn img {
+  opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img {
+  opacity: 1;
+}
+
+/* DETAILS BOEK */
+.block-info{
+  display: flex;
+  justify-content: center;
+}
+
+.block-left{
+  
+}
+
+.block-right{
+  width: 523px;
+  margin-left: 55px;
+}
+
+.block-right ul{
+  list-style: none;
+}
+
+.block-right h2{
+  margin-bottom: 7px;
+}
+
+.block-right h1{
+  margin-bottom: 7px;
+}
+
+/* FORMULIER */
+.form-page{
+  display: flex;
+  justify-content: center;
+}
+
+.form-page form{
+  height: 300px;
+  width: 400px;
+}
+
+.form-page input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 18px;
+  margin-top: 7px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.form-page input[type=submit] {
+  width: 100%;
+  background-color: var(--red);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form-page input[type=submit]:hover {
+  background-color: var(--dark-red);
+}
+
+.h1-reserveer-page{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-reserveer-page{
+  height: 100px;
+  width: 150px;
+  margin: 20px 50px 50px 50px
+}

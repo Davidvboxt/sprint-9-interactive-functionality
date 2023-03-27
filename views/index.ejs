@@ -1,0 +1,58 @@
+<%- include('./partials/head') %>
+
+    <section>
+        <h1>Alle Boeken</h1>
+        <div class="search">
+            <input class="search-input" type="text" placeholder="Search.." name="search">
+            <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+        </div>
+        <button class="pre-btn"><img src="images/arrow.png" alt=""> > </button>
+        <button class="nxt-btn"><img src="images/arrow.png" alt=""> > </button>
+        <div class="read-more-container product-container">
+            <% results.forEach(result=> { %>
+
+                <p>
+                <article>
+                    <img class="boeken-foto" src="<%= result.coverimages %>" alt="boek">
+                    <h4>
+                        <%= result.frabl.key1 %>
+                    </h4>
+                    <p class="boek-schrijvers">
+                        <%= result.frabl.key2 %>
+                    </p>
+
+                    <span class="read-more-text">
+                        <span>Info:</span>
+                        <p>
+                            <%= result.summaries %>
+                        </p>
+
+                        <span>Genre:</span>
+                        <p>
+                            <%= result.genres %>
+                        </p>
+
+                        <span>Taal:</span>
+                        <p>
+                            <%= result.languages %>
+                        </p>
+
+                        <span>Aantal pagina's:</span>
+                        <p>
+                            <%= result.description[0] %>
+                        </p>
+
+                    </span>
+
+                    </p>
+                    <a href="/detail?resultIsbn<%= result.isbn %>" class="more-details">Meer Details</a>
+                    <button class="btn">Reserveer</button>
+                </article>
+
+                <% }) %>
+        </div>
+    </section>
+
+    <%- include('./partials/foot') %>
+
+        <%- include('./partials/foot') %>

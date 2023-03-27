@@ -1,0 +1,30 @@
+{
+  "name": "sprint-9-interactive-functionality",
+  "version": "0.0.1",
+  "description": "Ontwerp en ontwikkel een server-side website voor een opdrachtgever.",
+  "main": "server.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
+  "author": "J.P. Sturkenboom <j.p.sturkenboom@hva.nl>",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/fdnd-task/sprint-9-interactive-functionality/issues"
+  },
+  "homepage": "https://github.com/fdnd-task/sprint-9-interactive-functionality#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
