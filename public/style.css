@@ -33,14 +33,12 @@ p{
 }
 
 .btn{
-    margin-top: 25px;
     width: 69%;
     background-color: var(--red);
     color: white;
     padding: 7px;
     border: 1px;
-    /* position: absolute;
-    bottom: 14px; */
+    text-decoration: none;
 }
 
 section{
@@ -60,7 +58,7 @@ h4{
 .search{
   display: flex;
   justify-content: center;
-  margin-bottom: 80px;
+  margin-bottom: 50px;
 }
 
 .search-input{
@@ -402,6 +400,7 @@ button:hover {
 
 .block-right ul{
   list-style: none;
+  margin-bottom: 18px;
 }
 
 .block-right h2{

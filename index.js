@@ -3,46 +3,52 @@ import express from 'express'
 const url = "https://zoeken.oba.nl/api/v1/search/";
 const urlSearch = "?q=";
 const urlDefault = "boek";
-const urlKey ="&authorization=1e19898c87464e239192c8bfe422f280";
+const urlKey = "&authorization=1e19898c87464e239192c8bfe422f280";
 const urlOutput = "&refine=true&output=json";
+
+
 // Maak een nieuwe express app
 const app = express()
 
 // Stel in hoe we express gebruiken
 app.set('view engine', 'ejs')
 app.set('views', './views')
-app.use(express.static('public'))   
+app.use(express.static('public'))
+
+// Stel afhandeling van formulieren in
+app.use(express.json())
+app.use(express.urlencoded({
+  extended: true
+}))
 
 // Maak een route voor de index pagina
 app.get('/', (request, response) => {
-    const booksUrl = url + urlSearch + urlDefault + urlKey + urlOutput;
-    
+  const booksUrl = url + urlSearch + urlDefault + urlKey + urlOutput;
+
   fetchJson(booksUrl).then((data) => {
     response.render('index', data)
     // console.log(data);
   })
-  
+
 })
-app.get('/reserveer', (request, response) => {
-  response.render('reserveer')
-})
+
 
 // Maak een route voor de detail pagina
 app.get("/detail", async (request, response) => {
   let isbn = request.query.resultIsbn || "9789045117621";
 
-    const uniqueUrl =
-        url + urlSearch + isbn + urlKey + urlOutput;
+  const uniqueUrl =
+    url + urlSearch + isbn + urlKey + urlOutput;
 
-    const data = await fetch(uniqueUrl)
-        .then((response) => response.json())
-        .catch((err) => err);
-    response.render("detail", data);
+  const data = await fetch(uniqueUrl)
+    .then((response) => response.json())
+    .catch((err) => err);
+  response.render("detail", data);
 
 });
 
 // Stel het poortnummer in en start express
-app.set('port', process.env.PORT || 8000)
+app.set('port', process.env.PORT || 4000)
 app.listen(app.get('port'), function () {
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
