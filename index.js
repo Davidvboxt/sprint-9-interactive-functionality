@@ -32,6 +32,21 @@ app.get('/', (request, response) => {
 
 })
 
+// Maakt een route voor de reserveringspagina
+app.get('/reserveren', (request, response) => {
+  response.render('reserveren')
+})
+
+app.post('/reserveren', (request, response) => {
+  const postURL = 'https://api.oba.fdnd.nl/api/v1/'
+  const url = `${postURL}/reserveren`
+
+  console.log(request.body)
+
+  postJson(url, request.body).then((data) => {
+      // console.log(JSON.stringify(data))
+  })
+})
 
 // Maak een route voor de detail pagina
 app.get("/detail", async (request, response) => {
@@ -63,3 +78,4 @@ async function fetchJson(url) {
     .then((response) => response.json())
     .catch((error) => error)
 }
+
