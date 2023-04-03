@@ -15,12 +15,6 @@ app.set('view engine', 'ejs')
 app.set('views', './views')
 app.use(express.static('public'))
 
-// Stel afhandeling van formulieren in
-app.use(express.json())
-app.use(express.urlencoded({
-  extended: true
-}))
-
 // Maak een route voor de index pagina
 app.get('/', (request, response) => {
   const booksUrl = url + urlSearch + urlDefault + urlKey + urlOutput;
@@ -33,18 +27,18 @@ app.get('/', (request, response) => {
 })
 
 // Maakt een route voor de reserveringspagina
-app.get('/reserveren', (request, response) => {
-  response.render('reserveren')
+app.get('/reserveer', (request, response) => {
+  response.render('reserveer')
 })
 
-app.post('/reserveren', (request, response) => {
+app.post('/reserveer', (request, response) => {
   const postURL = 'https://api.oba.fdnd.nl/api/v1/'
-  const url = `${postURL}/reserveren`
+  const url = `${postURL}/reserveer`
 
   console.log(request.body)
 
   postJson(url, request.body).then((data) => {
-      // console.log(JSON.stringify(data))
+    // console.log(JSON.stringify(data))
   })
 })
 
@@ -79,3 +73,18 @@ async function fetchJson(url) {
     .catch((error) => error)
 }
 
+// Stel afhandeling van formulieren in
+server.use(express.json())
+server.use(express.urlencoded({
+  extended: true
+}))
+
+// Verstuurt de data naar de API
+server.post("/reserveren", (request, response) => {
+  const baseurl = "https://api.oba.fdnd.nl/api/v1";
+  const url = `${baseurl}/reserveringen`;
+
+  postJson(url, request.body).then((data) => {
+
+  });
+});
