@@ -6,7 +6,6 @@ const urlDefault = "boek";
 const urlKey = "&authorization=1e19898c87464e239192c8bfe422f280";
 const urlOutput = "&refine=true&output=json";
 
-
 // Maak een nieuwe express app
 const app = express()
 
@@ -28,18 +27,12 @@ app.get('/', (request, response) => {
 
 // Maakt een route voor de reserveringspagina
 app.get('/reserveer', (request, response) => {
-  response.render('reserveer')
+  response.render('reserveer', {id: request.query.id})
 })
 
-app.post('/reserveer', (request, response) => {
-  const postURL = 'https://api.oba.fdnd.nl/api/v1/'
-  const url = `${postURL}/reserveer`
-
-  console.log(request.body)
-
-  postJson(url, request.body).then((data) => {
-    // console.log(JSON.stringify(data))
-  })
+// Maakt een route voor de succes pagina
+app.get('/succes', (request, response) => {
+  response.render('succes')
 })
 
 // Maak een route voor de detail pagina
@@ -72,19 +65,32 @@ async function fetchJson(url) {
     .then((response) => response.json())
     .catch((error) => error)
 }
+export async function postJson(url, body) {
+  return await fetch(url, {
+    method: 'post',
+    body: JSON.stringify(body),
+    headers: { 'Content-Type': 'application/json' },
+  })
+    .then((response) => response.json())
+    .catch((error) => error)
+}
 
-// Stel afhandeling van formulieren in
-server.use(express.json())
-server.use(express.urlencoded({
-  extended: true
-}))
-
-// Verstuurt de data naar de API
-server.post("/reserveren", (request, response) => {
-  const baseurl = "https://api.oba.fdnd.nl/api/v1";
-  const url = `${baseurl}/reserveringen`;
+// Stuurt de reserveer data naar de API
+app.post('/reserveer', (request, response) => {
+  const postURL = 'https://api.oba.fdnd.nl/api/v1/reserveringen'
+  const url = `${postURL}reserveringen`
+console.log(url)
 
   postJson(url, request.body).then((data) => {
+    let newReservering = { ... request.body }
+    console.log(newReservering);
+    if (data.id) {
+      response.redirect('/succes') 
+      console.log("werkt!")
+      
 
-  });
-});
+    } else{
+      response.redirect('/succes')
+    }
+  })
+})
