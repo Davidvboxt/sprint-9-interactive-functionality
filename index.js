@@ -2,7 +2,8 @@ import express from 'express'
 
 const url = "https://zoeken.oba.nl/api/v1/search/";
 const urlSearch = "?q=";
-const urlDefault = "boek";
+// const urlDefault = "boek";
+const urlDefault = "special:all";
 const urlKey = "&authorization=1e19898c87464e239192c8bfe422f280";
 const urlOutput = "&refine=true&output=json";
 
