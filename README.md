@@ -1,33 +1,14 @@
 > _Fork_ deze leertaak en ga aan de slag. Onderstaande outline ga je gedurende deze taak in jouw eigen GitHub omgeving uitwerken. De instructie vind je in: [docs/INSTRUCTIONS.md](docs/INSTRUCTIONS.md)
 
-# Titel
-<!-- Geef je project een titel en schrijf in één zin wat het is -->
+# Progressive Enhancement
 
-## Inhoudsopgave
+Ik heb dit project gebouwd volgens de principe van progressive enhancement. Progressive enhancement zorgt ervoor dat de belangerijkste delen van mijn website het altijd doet ongeacht welke browser of apparraat je gebruikt. Dit heb ik toegepast doormiddel van 3 lagen.
 
-  * [Beschrijving](#beschrijving)
-  * [Gebruik](#gebruik)
-  * [Kenmerken](#kenmerken)
-  * [Installatie](#installatie)
-  * [Bronnen](#bronnen)
-  * [Licentie](#licentie)
+De eerste laag is het maken van de content layer. Een ander woord hiervoor is de core. De core is het html gedeelte gemixt met nodejs. Ik heb ervoor moeten zorgen dat dit gedeelte altijd werkt op elk browser of apparaat onafhankelijk van de css gedeelte. Voor het geval dat voor welke reden dan ook de css niet in kan laden is de html altijd werkend. De formulier om gebruikers iets te kunnen achterlaten op mijn website is in dit geval de core.
 
-## Beschrijving
-<!-- In de Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
-<!-- Voeg een mooie poster visual toe 📸 -->
-<!-- Voeg een link toe naar Github Pages 🌐-->
+Mijn tweede is de presentation layer. Hierbij zorg ik ervoor de de formulier een opmaak krijgt en prettig is om naar te kijken. Dit doe ik doormiddel van css toe te voegen. De input veld pas ik hierin aan en de submite button. De submite button geef ik dezelfde stijl als de rest van de buttons op mijn website. De buttens van de oba zijn gebasseerd op de huisstijl.
 
-## Gebruik
-<!--Bij Gebruik staat hoe je project er uit ziet, hoe het werkt en wat je er mee kan. -->
-
-## Kenmerken
-<!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
-
-## Installatie
-<!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
-
-
-## Bronnen
+Tot slot voeg ik een redirect toe om de User Experience te verbeteren. Als je succesvol de formulier hebt ingevult en hebt gesubmit word je door de redirect doorgestuurd naar een pagina waarin je te zien krijgt dat de afhadelijk succesvol is afgerond.
 
 ## Licentie
 
